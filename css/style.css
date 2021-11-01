@@ -1,0 +1,193 @@
+body {
+    min-height: 100vh;
+    background-color: black;
+}
+
+h2.page-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #fafafa;
+}
+
+h1.game-intro {
+    font-size: 27px;
+    color: #fafafa;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 600;
+}
+
+.toggle {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+  
+.button {
+    background-color: black;
+    color: #fafafa;
+    font-family: 'Orbitron';
+}
+  
+#buttons {
+    position: absolute;
+    font-family: 'Original Surfer', cursive;
+    margin-left: 26px;
+    margin-top: 110px;
+}
+  
+.counter-text {
+    position: absolute;
+    font-family: Orbitron, sans-serif;
+    margin-left: 83px;
+    margin-top: 197px;
+}
+  
+.text1 {
+    position: absolute;
+    font-family: Orbitron, sans-serif;
+    margin-left: 19px;
+    margin-top: 142px;
+}
+  
+.text1 span:last-child {
+    padding-left: 96px;
+}
+
+span {
+    color: #fafafa;
+    font-size: 12px;
+}
+#title {
+    font-family: 'Original Surfer', cursive;
+    position: absolute;
+    font-size: 40px;
+    margin-left: 35px;
+    margin-top: 40px;
+}
+
+#icon {
+    position: absolute;
+    font-size: 65px;
+    margin-left: 83px;
+    margin-top: 10px;
+    color: #e9ecef73;
+}
+  
+#counter {
+    position: absolute;
+    background: #330000;
+    color: red;
+    font-family: courier;
+    font-size: 20px;
+    height: 30px;
+    width: 50px;
+    margin-left: 90px;
+    margin-top: 170px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+  
+#outer-circle {
+    background: black;
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    border-style: solid;
+    border-width: 10px;
+    margin: auto;
+    margin-top: 60px;
+}
+  
+#purple-button {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 250px 0 0 0;
+    -moz-border-radius: 250px 0 0 0;
+    -webkit-border-radius: 250px 0 0 0;
+    background: purple;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0px 0px -250px;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-color: #000000;
+}
+  
+#orange-button {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 0 250px 0 0;
+    -moz-border-radius: 0 250px 0 0;
+    -webkit-border-radius: 0 250px 0 0;
+    background: orange;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0px 0px 0px;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-color: #000000;
+}
+  
+#red-button {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 0 0 0 250px;
+    -moz-border-radius: 0 0 0 250px;
+    -webkit-border-radius: 0 0 0 250px;
+    background: red;
+    top: 50%;
+    left: 50%;
+    margin: 0px -250px 0px -250px;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-color: #000000;
+}
+  
+#green-button {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 0 0 250px 0;
+    -moz-border-radius: 0 0 250px 0;
+    -webkit-border-radius: 0 0 250px 0;
+    background: darkblue;
+    top: 50%;
+    left: 50%;
+    margin: 0px 0px -250px 0px;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-color: #000000;
+}
+  
+#button-board {
+    position: absolute;
+    background: black;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    border-style: solid;
+    border-width: 10px;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0px 0px -125px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-color: #000000;
+}
