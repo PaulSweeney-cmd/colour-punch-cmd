@@ -121,6 +121,9 @@ h1.game-intro {
 }
 
 /* buttons, toggle switches and game counter */
+span.strict {
+    margin-left: 55px;
+}
 .toggle {
     margin-left: 20px;
     margin-right: 20px;
