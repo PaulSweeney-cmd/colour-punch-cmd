@@ -19,48 +19,50 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    <div class="row justify-content-center">
-        <h2 class="page-title text-center mt-5">Colour Punch</h2>
-    </div>
-    <!-- game instructions -->
-    <div class="row justify-content-center">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Game Instructions
-             </button>
-            <div class="dropdown-menu p-4 text-muted" style="max-width: 200px; padding: 11px !important;">
-                <p class="mb-0">
-                    <p>Simply match the colour sequence of the game to score a point</p>
-                    <p>The more points you score the more the sequence increases</p>
-                    <p>Get to ten points to win the game  <i class="fas fa-trophy" style="color: goldenrod;"></i></p>
-                    <hr>
-                    <p>SWITCH MODE</p>
-                    <p>ON: Lose the round...lose the points</p>
-                    <p>OFF: Lose the round...keep the points</p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2 class="page-title text-center mt-5">Colour Punch</h2>
+        </div>
+        <!-- game instructions -->
+        <div class="row justify-content-center">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Game Instructions
+                </button>
+                <div class="dropdown-menu p-4 text-muted" style="max-width: 200px; padding: 11px !important;">
+                    <p class="mb-0">
+                        <p>Simply match the colour sequence of the game to score a point</p>
+                        <p>The more points you score the more the sequence increases</p>
+                        <p>Get to ten points to win the game  <i class="fas fa-trophy"></i></p>
+                        <hr>
+                        <p>SWITCH MODE</p>
+                        <p>ON: Lose the round...lose the points</p>
+                        <p>OFF: Lose the round...keep the points</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- main game board with coloured buttons -->
-        <div id="outer-circle">
-            <div id="red-button"></div>
-            <div id="green-button"></div>
-            <div id="blue-button"></div>
-            <div id="orange-button"></div>
-            <div id="button-board">
-                <div id="icon"><i class="fas fa-grin-squint"></i></div>
-                <!-- toggle switch board -->
-                <div id="buttons">
-                    <input type="checkbox" class="toggle" id="on-button">
-                    <button class="button" id="start-button">Start</button>
-                    <input type="checkbox" class="toggle" id="strict-button">
+            <!-- main game board with coloured buttons -->
+            <div id="outer-circle">
+                <div id="red-button"></div>
+                <div id="green-button"></div>
+                <div id="blue-button"></div>
+                <div id="orange-button"></div>
+                <div id="button-board">
+                    <div id="icon"><i class="fas fa-grin-squint"></i></div>
+                    <!-- toggle switch board -->
+                    <div id="buttons">
+                        <input type="checkbox" class="toggle" id="on-button">
+                        <button class="button" id="start-button">Start</button>
+                        <input type="checkbox" class="toggle" id="strict-button">
+                    </div>
+                    <!-- toggle switch text and game counter section -->
+                    <div class="toggle-text">
+                        <span class="power">POWER</span><span class="strict">STRICT MODE</span>
+                    </div>
+                    <div id="counter"></div>
+                    <div class="counter-text"></div>
                 </div>
-                <!-- toggle switch text and game counter section -->
-                <div class="toggle-text">
-                    <span class="power">POWER</span><span class="strict">STRICT MODE</span>
-                </div>
-                <div id="counter"></div>
-                <div class="counter-text"></div>
             </div>
         </div>
     </div>
