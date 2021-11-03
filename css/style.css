@@ -1,12 +1,11 @@
 /* general page styling */
 body {
-    min-height: 100vh;
     background-color: black;
 }
 h2.page-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 32px;
-    color: #fafafa;
+    color: #17a2b8;
 }
 
 /* instructions dropdown */
@@ -19,7 +18,7 @@ button#dropdownMenu2 {
     background-color: #000 !important;
 }
 p {
-    color: #fafafa;
+    color: #17a2b8;
     font-family: 'Orbitron';
     font-size: 14px;
     letter-spacing: 1px;
@@ -41,14 +40,14 @@ hr {
     margin: auto;
     margin-top: 60px;
 }
-#purple-button {
+#green-button {
     position: absolute;
     height: 250px;
     width: 250px;
     border-radius: 250px 0 0 0;
     -moz-border-radius: 250px 0 0 0;
     -webkit-border-radius: 250px 0 0 0;
-    background: purple;
+    background: green;
     top: 50%;
     left: 50%;
     margin: -250px 0px 0px -250px;
@@ -94,15 +93,16 @@ hr {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border-color: #000000;
+
 }
-#green-button {
+#blue-button {
     position: absolute;
     height: 250px;
     width: 250px;
     border-radius: 0 0 250px 0;
     -moz-border-radius: 0 0 250px 0;
     -webkit-border-radius: 0 0 250px 0;
-    background: darkblue;
+    background: blue;
     top: 50%;
     left: 50%;
     margin: 0px 0px -250px 0px;
