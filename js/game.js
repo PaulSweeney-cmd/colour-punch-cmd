@@ -35,15 +35,15 @@ const orange = document.querySelector("#orange-button")
 const red = document.querySelector("#red-button")
 const green = document.querySelector("#green-button")
 
-// control buttons
-const powerButton = document.querySelector("#on-button")
-const strictButton = document.querySelector("#strict-button")
+// control buttons & toggles
+const power = document.querySelector("#on-button")
+const strict = document.querySelector("#strict-button")
 const start = document.querySelector("#start-button")
 
 // check if strict toggle is activated
-strictButton.addEventListener('click', (event) => {
+strict.addEventListener('click', (event) => {
     console.log("toggle test")
-    if (strictButton.checked == true) {
+    if (strict.checked == true) {
         strictToggle = true;
     } else {
         strictToggle = false;
