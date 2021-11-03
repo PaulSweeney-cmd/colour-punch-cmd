@@ -8,12 +8,30 @@ h2.page-title {
     font-size: 32px;
     color: #fafafa;
 }
-h1.game-intro {
-    font-size: 27px;
-    color: #fafafa;
-    font-family: 'Inconsolata', monospace;
-    font-weight: 600;
+
+/* instructions dropdown */
+button#dropdownMenu2 {
+    background-color: #000 !important;
+    font-family: 'Orbitron';
+    border: 1px solid #fafafa;
 }
+.dropdown-menu.p-4.text-muted.show {
+    background-color: #000 !important;
+}
+li {
+    color: #fafafa;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+p {
+    color: #fafafa;
+    font-family: 'Orbitron';
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
 
 /* game buttons and styling */
 
