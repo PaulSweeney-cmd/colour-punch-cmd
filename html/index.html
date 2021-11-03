@@ -30,45 +30,43 @@
                 </button>
                 <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;">
                     <p class="mb-0">
-                        <ol>
-                            <li>Simply match the colour sequence of the game to score a point</li>
-                            <li>The more points you score the more the sequence increases</li>
-                            <li>Get to ten points to win the game</li>
-                            <li>SWITCH MODE</li>
-                        </ol>
-                            <p>ON: Lose the round...lose the points</p>
-                            <p>OFF: Lose the round...keep the points</p>
-                    </p>
+                        <p>Simply match the colour sequence of the game to score a point</p>
+                        <p>The more points you score the more the sequence increases</p>
+                        <p>Get to ten points to win the game</p>
+                        <hr>
+                        <p>SWITCH MODE</p>
+                        <p>ON: Lose the round...lose the points</p>
+                        <p>OFF: Lose the round...keep the points</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <!-- main game board with coloured buttons -->
+                    <div id="outer-circle">
+                        <div id="purple-button"></div>
+                        <div id="red-button"></div>
+                        <div id="green-button"></div>
+                        <div id="orange-button"></div>
+                        <div id="button-board">
+                            <div id="icon"><i class="fas fa-grin-squint"></i></div>
+                            <!-- toggle switch board -->
+                            <div id="buttons">
+                                <input type="checkbox" class="toggle" id="on-button">
+                                <button class="button" id="start-button">Start</button>
+                                <input type="checkbox" class="toggle" id="strict-button">
+                            </div>
+                            <!-- toggle switch text and game counter section -->
+                            <div class="toggle-text">
+                                <span class="power">POWER</span><span class="strict">STRICT MODE</span>
+                            </div>
+                            <div id="counter"></div>
+                            <div class="counter-text"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    <div class="row">
-        <div class="container">
-            <!-- main game board with coloured buttons -->
-            <div id="outer-circle">
-                <div id="purple-button"></div>
-                <div id="red-button"></div>
-                <div id="green-button"></div>
-                <div id="orange-button"></div>
-                <div id="button-board">
-                    <div id="icon"><i class="fas fa-grin-squint"></i></div>
-                    <!-- toggle switch board -->
-                    <div id="buttons">
-                        <input type="checkbox" class="toggle" id="on-button">
-                        <button class="button" id="start-button">Start</button>
-                        <input type="checkbox" class="toggle" id="strict-button">
-                    </div>
-                    <!-- toggle switch text and game counter section -->
-                    <div class="toggle-text">
-                        <span class="power">POWER</span><span class="strict">STRICT MODE</span>
-                    </div>
-                    <div id="counter"></div>
-                    <div class="counter-text"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="/js/game.js"></script>
+    <script src="/js/game.js"></script>
 </body>
 </html>
