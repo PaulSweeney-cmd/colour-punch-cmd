@@ -21,7 +21,26 @@
 <body>
     <div class="col-12">
         <h2 class="page-title text-center mt-5">Colour Punch</h2>
-        <h1 class="game-intro text-center mt-4">Simply memorise the colour sequence to score!</h1>
+        <div class="row justify-content-center">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Game Instructions
+            </button>
+            <div class="dropdown-menu p-4 text-muted" style="max-width: 200px;">
+                <p class="mb-0">
+                    <ol>
+                        <li>Simply match the colour sequence of the game to score a point</li>
+                        <li>The more points you score the more the sequence increases</li>
+                        <li>Get to ten points to win the game</li>
+                        <li>SWITCH MODE</li>
+                        <p>ON: Lose the round...lose the points</p>
+                        <p>OFF: Lose the round...keep the points</p>
+                  </ol>
+                </p>
+              </div>
+          </div>
+          </div>
+          <div class="row">
         <div class="container">
             <!-- main game board with coloured buttons -->
             <div id="outer-circle">
@@ -47,6 +66,7 @@
             </div>
         </div>
     </div>
+</div>
     <script src="/js/game.js"></script>
 </body>
 </html>
