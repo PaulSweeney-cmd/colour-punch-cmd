@@ -36,7 +36,6 @@ const power = document.querySelector("#on-button")
 const strict = document.querySelector("#strict-button")
 const start = document.querySelector("#start-button")
 
-
 // check if strict mode toggle is activated
 strict.addEventListener('click', (event) => {
     console.log("toggle test")
@@ -57,6 +56,7 @@ power.addEventListener('click', (event) => {
         powerToggle = false;
         roundCounter.innerHTML = "OFF"
         clearColor();
+        // stops colour buttions from flashing if power is off
         clearInterval(intervalId);
     }
 });
