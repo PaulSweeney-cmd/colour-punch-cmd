@@ -1,9 +1,9 @@
 // keeping track of the colour sequence
 let colourOrder = [];
 // keeping track of the order the player is using
-let playerOrder = [];
+let playOrder = [];
 // number of flashes in each game
-let flash;
+let gameFlash;
 // keep track of what turn the player is on(counter number, let turn)
 let playerTurn;
 // if the player is doing well or not (let good in tutorial)
@@ -16,7 +16,7 @@ let strictToggle = false;
 // checking if power button is on or off 
 let powerToggle = false;
 // if playwer has won the game or not 
-let win;
+let gameWin;
 
 // font icon to change colour with every round
 const icon = document.querySelector(".i.fas.fa-grin-squint")
@@ -36,7 +36,7 @@ const strict = document.querySelector("#strict-button")
 const start = document.querySelector("#start-button")
 
 
-// check if strict toggle is activated
+// check if strict mode toggle is activated
 strict.addEventListener('click', (event) => {
     console.log("toggle test")
     if (strict.checked == true) {
@@ -44,7 +44,7 @@ strict.addEventListener('click', (event) => {
     } else {
         strictToggle = false;
     }
-})
+});
 
 // check if on power toggle is activated
 power.addEventListener('click', (event) => {
@@ -58,4 +58,27 @@ power.addEventListener('click', (event) => {
         clearColor();
         clearInterval(intervalId);
     }
-})
+});
+
+// if start button is activated the game starts
+start.addEventListener('click', (event) => {
+    if (powerToggle || winGame) {
+        playGame();
+    }
+});
+
+// resetting the variables when new game
+function playGame() {
+    playOrder = [];
+    gameFlash = 0;
+    gameWin = false;
+    colourOrder = [];
+    intervalId = 0;
+    playerTurn = 1;
+    roundCounter.innerHTML = 1;
+    progress = true;
+    // looping through the game 10 tims as player has to get 10 rounds to win
+    for (var i = 0; i < 10; i++) {
+        
+    }
+}
