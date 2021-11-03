@@ -11,9 +11,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Orbitron&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/fa71afe396.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
@@ -31,13 +33,13 @@
                     <div id="icon"><i class="fas fa-grin-squint"></i></div>
                     <!-- toggle switch board -->
                     <div id="buttons">
-                        <input type="checkbox" class="toggle" id="on">
-                        <button class="button" id="start">Start</button>
-                        <input type="checkbox" class="toggle" id="strict">
+                        <input type="checkbox" class="toggle" id="on-button">
+                        <button class="button" id="start-button">Start</button>
+                        <input type="checkbox" class="toggle" id="strict-button">
                     </div>
                     <!-- toggle switch text and game counter section -->
                     <div class="toggle-text">
-                        <span>POWER</span><span>STRICT</span>
+                        <span class="power">POWER</span><span class="strict">STRICT MODE</span>
                     </div>
                     <div id="counter"></div>
                     <div class="counter-text"></div>
@@ -45,5 +47,6 @@
             </div>
         </div>
     </div>
+    <script src="/js/game.js"></script>
 </body>
 </html>
