@@ -4,10 +4,10 @@ let colorOrder = [];
 let playOrder = [];
 // number of flashes in each game
 let gameFlash;
-// keep track of what turn the player is on(counter number, let turn)
+// keep track of what turn the player is on
 let playerTurn;
-// if the player is doing well or not (let good in tutorial)
-let progress;
+// if the player is doing well or not
+let playerProgress;
 // if computers turn or players turn
 let compTurn;
 // setting a time inteval
@@ -77,10 +77,10 @@ function playGame() {
     intervalId = 0;
     playerTurn = 1;
     roundCounter.innerHTML = 1;
-    progress = true;
+    playerProgress = true;
     // looping through the game 10 times as player has to get 10 rounds to win
     for (var i = 0; i < 10; i++) {
-        playOrder.push(Math.floor(Math.random() * 4) + 1);
+        colorOrder.push(Math.floor(Math.random() * 4) + 1);
     }
     compTurn = true;
     // setting an interval of 900 milliseconds for the gameTurn function
@@ -95,32 +95,34 @@ function gameTurn() {
         clearColor();
         powerToggle = true;
     }
-
+    // computer resets colours and generates a random color lasting 2 seconds
     if (compTurn) {
         clearColor();
         setTimeout(() => {
-            if (colorOrder[gameFlash] == 1) one();
-            if (colorOrder[gameFlash] == 2) two();
-            if (colorOrder[gameFlash] == 3) three();
-            if (colorOrder[gameFlash] == 4) four();
+            if (colorOrder[gameFlash] == 1) colorOne();
+            if (colorOrder[gameFlash] == 2) colorTwo();
+            if (colorOrder[gameFlash] == 3) colorThree();
+            if (colorOrder[gameFlash] == 4) colorFour();
             gameFlash++;
         }, 200);
     }
 }
 
-function one() {
+// functions from gameTurn are called and colours change in respoinse to the sequence
+function colorOne() {
     green.style.backgroundColor = "lightgreen";
 }
-function two() {
-    orange.style.backgroundColor = "tomato";
+function colorTwo() {
+    red.style.backgroundColor = "lightcoral";
 }
-function three() {
-    red.style.backgroundColor = "yellow";
+function colorThree() {
+    orange.style.backgroundColor = "lightgoldenrodyellow";
 }
-function four() {
-    blue.style.backgroundColor = "lightskyblue";
+function colorFour() {
+    blue.style.backgroundColor = "lightblue";
 }
 
+// function to change colours in play and when game is reset or restarted
 function clearColor() {
     green.style.backgroundColor = "darkgreen";
     orange.style.backgroundColor = "darkorange";
@@ -128,11 +130,55 @@ function clearColor() {
     blue.style.backgroundColor = "darkblue";
 }
 
+// functions to alow user to click the highlighted colour
+// cross reference each function with the first to avoid comment repitition
+
 green.addEventListener('click', (event) => {
+    // if power is 'ON' push the color in to the play order array and call the function
     if (powerToggle) {
         playOrder.push(1);
         // checkCorrect();
-        one();
+        colorOne();
+        // if player hasn't won game revert colour back to default
+        if(!gameWin) {
+            setTimeout(() => {
+                clearColor();
+            }, 300);
+        }   
+    }
+})
+
+orange.addEventListener('click', (event) => {
+    if (powerToggle) {
+        playOrder.push(2);
+        // checkCorrect();
+        colorThree();
+        if(!gameWin) {
+            setTimeout(() => {
+                clearColor();
+            }, 300);
+        }   
+    }
+})
+
+red.addEventListener('click', (event) => {
+    if (powerToggle) {
+        playOrder.push(3);
+        // checkCorrect();
+        colorTwo();
+        if(!gameWin) {
+            setTimeout(() => {
+                clearColor();
+            }, 300);
+        }   
+    }
+})
+
+blue.addEventListener('click', (event) => {
+    if (powerToggle) {
+        playOrder.push(4);
+        // checkCorrect();
+        colorFour();
         if(!gameWin) {
             setTimeout(() => {
                 clearColor();
