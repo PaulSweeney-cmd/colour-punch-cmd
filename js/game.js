@@ -29,13 +29,13 @@ let win;
 // game counter
 const counter = document.querySelector("#counter");
 
-// game buttons
+// colour buttons
 const purple = document.querySelector("#purple-button")
 const orange = document.querySelector("#orange-button")
 const red = document.querySelector("#red-button")
 const green = document.querySelector("#green-button")
 
-// buttons
+// control buttons
 const powerButton = document.querySelector("#on-button")
 const strictButton = document.querySelector("#strict-button")
 const start = document.querySelector("#start-button")
