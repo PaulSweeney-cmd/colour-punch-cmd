@@ -8,8 +8,9 @@ let gameFlash;
 let playerTurn;
 // if the player is doing well or not (let good in tutorial)
 let progress;
-// if computers turn or players turn (let compTurn in game)
-let gameTurn;
+// if computers turn or players turn
+let compTurn;
+// setting a time inteval
 let intervalId;
 // checking whether the strict toggle is switched on or off
 let strictToggle = false;
@@ -67,18 +68,22 @@ start.addEventListener('click', (event) => {
     }
 });
 
-// resetting the variables when new game
+// resetting the variables when player starts a new game
 function playGame() {
-    playOrder = [];
-    gameFlash = 0;
     gameWin = false;
     colourOrder = [];
+    playOrder = [];
+    gameFlash = 0;
     intervalId = 0;
     playerTurn = 1;
     roundCounter.innerHTML = 1;
     progress = true;
-    // looping through the game 10 tims as player has to get 10 rounds to win
+    // looping through the game 10 times as player has to get 10 rounds to win
     for (var i = 0; i < 10; i++) {
-        
+        playOrder.push(Math.floor(Math.random() * 4) + 1);
+        console.log(playOrder);
     }
+    compTurn = true;
+    // setting an interval of 900 milliseconds for the gameTurn function
+    interval = setInterval(gameTurn, 900);
 }
