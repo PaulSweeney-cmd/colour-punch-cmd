@@ -188,7 +188,7 @@ blue.addEventListener('click', (event) => {
 })
 
 // checking progress of current game
-function check() {
+function checkProgress() {
     // checking to see if the player and game are at an equal level
     if (playOrder[playOrder.length - 1] !== colorOrder[playOrder.length - 1])
         playerProgress = false;
