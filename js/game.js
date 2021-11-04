@@ -205,7 +205,7 @@ function checkProgress() {
         setTimeout(() => {
             roundCounter.innerHTML = playerTurn
             clearColor();
-            // if STRICT MODE is switched on the game automatically resets back to the beginning
+            // if STRICT MODE is switched on the game automatically resets back to the beginning  // add to commit
             if (strictMode) {
                 playGame();
             // if STRICT MODE is switched off the game resumes
