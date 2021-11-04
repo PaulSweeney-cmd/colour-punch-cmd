@@ -83,7 +83,7 @@ function playGame() {
         colorOrder.push(Math.floor(Math.random() * 4) + 1);
     }
     compTurn = true;
-    // setting an interval of 900 milliseconds for the gameTurn function
+    // setting an interval of 800 milliseconds for the gameTurn function
     intervalId = setInterval(gameTurn, 800);
 }
 
@@ -186,3 +186,45 @@ blue.addEventListener('click', (event) => {
         }   
     }
 })
+
+// checking progress of current game
+function check() {
+    // checking to see if the player and game are at an equal level
+    if (playOrder[playOrder.length - 1] !== colorOrder[playOrder.length - 1])
+        playerProgress = false;
+    // if the player has scored ten points, the winGame function is called
+    if (playOrder.length == 10 && playerProgress) {
+        gameWin();
+    }
+    // if the players progress isn't good, a function is called and game counter displays text and icon changes
+    if (playerProgress == false) {
+        flashColor();
+        Element.innerHTML = <div id="icon"><i class="far fa-frown" style="color: red;"></i></div>
+        roundCounter.innerHTML = "X"
+        // after the error has happened the counter goes back to the current round and the clearColor function is called
+        setTimeout(() => {
+            roundCounter.innerHTML = playerTurn
+            clearColor();
+            // if STRICT MODE is switched on the game automatically resets back to the beginning
+            if (strictMode) {
+                playGame();
+            // if STRICT MODE is switched off the game resumes
+            } else {
+                compTurn = true;
+                gameFlash = 0;
+                playOrder = [];
+                playerProgress = true;
+                intervalId = setInterval(gameTurn, 800);
+            }
+        }, 800);
+    }
+    // condition to move on to the next round if player scored correctly - REFACTOR THIS!
+    if (playerTurn == playOrder.length && playerProgress && !gameWin) {
+        playerTurn++;
+        playOrder = [];
+        compTurn = true;
+        gameFlash = 0;
+        roundCounter.innerHTML = playerTurn;
+        intervalId = setInterval(gameTurn, 800);
+    }
+}
