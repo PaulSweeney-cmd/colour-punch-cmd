@@ -2,7 +2,7 @@
 let colorOrder = [];
 // keeping track of the order the player is using
 let playOrder = [];
-// number of flashes in each game
+// number of colour flashes in each game
 let gameFlash;
 // keep track of what turn the player is on
 let playerTurn;
@@ -122,6 +122,14 @@ function colorFour() {
     blue.style.backgroundColor = "lightblue";
 }
 
+// functions for font icon colour change
+function iconBad() {
+    document.getElementById("icon").style.color = "tomato"
+}
+function iconGood() {
+    document.getElementById("icon").style.color = "green"
+}
+
 // function to change colours in play and when game is reset or restarted
 function clearColor() {
     green.style.backgroundColor = "darkgreen";
@@ -196,16 +204,16 @@ function checkProgress() {
     if (playOrder.length == 10 && playerProgress) {
         gameWin();
     }
-    // if the players progress isn't good, a function is called and game counter displays text and icon changes
+    // if the players progress isn't good, a function is called and game counter displays text and iconChange function is called
     if (playerProgress == false) {
         flashColor();
-        Element.innerHTML = <div id="icon"><i class="far fa-frown" style="color: red;"></i></div>
+        iconBad();
         roundCounter.innerHTML = "X"
         // after the error has happened the counter goes back to the current round and the clearColor function is called
         setTimeout(() => {
             roundCounter.innerHTML = playerTurn
             clearColor();
-            // if STRICT MODE is switched on the game automatically resets back to the beginning  // add to commit
+            // if STRICT MODE is switched on the game automatically resets back to the beginning
             if (strictToggle) {
                 playGame();
             // if STRICT MODE is switched off the game resumes
