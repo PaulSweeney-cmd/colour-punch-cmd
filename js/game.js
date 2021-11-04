@@ -130,6 +130,8 @@ function iconGood() {
     document.getElementById("icon").style.color = "green"
 }
 
+// CREATE FUNCTION FOR A MODAL POP UP TO APPEAR WHEN PLAYER HAS REACHED TEN POINTS
+
 // function to change colours in play and when game is reset or restarted
 function clearColor() {
     green.style.backgroundColor = "darkgreen";
@@ -204,7 +206,7 @@ function checkProgress() {
     if (playOrder.length == 10 && playerProgress) {
         gameWin();
     }
-    // if the players progress isn't good, a function is called and game counter displays text and iconChange function is called
+    // if the players progress isn't good, a function is called and game counter displays text and ICON function is called
     if (playerProgress == false) {
         flashColor();
         iconBad();
@@ -226,12 +228,13 @@ function checkProgress() {
             }
         }, 800);
     }
-    // condition to move on to the next round if player scored correctly - REFACTOR THIS!
+    // condition to call the icon function and move on to the next round and if player scored correctly - REFACTOR THIS!
     if (playerTurn == playOrder.length && playerProgress && !gameWin) {
         playerTurn++;
         playOrder = [];
         compTurn = true;
         gameFlash = 0;
+        iconGood();
         roundCounter.innerHTML = playerTurn;
         intervalId = setInterval(gameTurn, 800);
     }
