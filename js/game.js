@@ -138,6 +138,7 @@ function iconGood() {
         green.style.color = "black";
     }, 300)
 }
+
 function iconReset() {
     document.getElementById("icon").style.color = "#000"
 }
