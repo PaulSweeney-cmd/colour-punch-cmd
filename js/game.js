@@ -248,6 +248,7 @@ function checkProgress() {
     }
 }
 
+// function to call when all rounds have been won, calls the flashColor function when player reached ten rounds
 function playerWin() {
     flashColor();
     powerToggle = false;
