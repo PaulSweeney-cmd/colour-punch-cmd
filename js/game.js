@@ -19,9 +19,6 @@ let powerToggle = false;
 // if playwer has won the game or not 
 let gameWin;
 
-// font icon to change colour with every round
-const icon = document.querySelector(".i.fas.fa-grin-squint")
-
 // game counter
 const roundCounter = document.querySelector("#counter");
 
@@ -35,14 +32,17 @@ const blue = document.querySelector("#blue-button")
 const power = document.querySelector("#on-button")
 const strict = document.querySelector("#strict-button")
 const start = document.querySelector("#start-button")
+const playAgain = document.querySelector("#play-again")
+const quit = document.querySelector("#quit-game")
 
 // check if strict mode toggle is activated
 strict.addEventListener('click', (event) => {
-    console.log("toggle test")
     if (strict.checked == true) {
         strictToggle = true;
+        roundCounter.innerHTML = "SM"
     } else {
         strictToggle = false;
+        roundCounter.innerHTML = "<strike>SM</strike>"
     }
 });
 
@@ -51,10 +51,10 @@ power.addEventListener('click', (event) => {
     console.log("power activated")
     if (power.checked == true) {
         powerToggle = true;
-        roundCounter.innerHTML = "ON"
+        roundCounter.innerHTML = "READY"
     } else {
         powerToggle = false;
-        roundCounter.innerHTML = "OFF"
+        roundCounter.innerHTML = "BYE <i class='far fa-hand-paper' aria-hidden='true'></i>"
         clearColor();
         // stops colour buttons from flashing if power is off
         clearInterval(intervalId);
@@ -124,13 +124,60 @@ function colorFour() {
 
 // functions for font icon colour change
 function iconBad() {
-    document.getElementById("icon").style.color = "darkred"
-}
-function iconGood() {
-    document.getElementById("icon").style.color = "green"
+    let red = document.getElementById("icon");
+    red.style.color = "red";
+    setTimeout(function() {
+        red.style.color = "black";
+    }, 300)
 }
 
-// CREATE FUNCTION FOR A MODAL POP UP TO APPEAR WHEN PLAYER HAS REACHED TEN POINTS
+function iconGood() {
+    let green = document.getElementById("icon");
+    green.style.color = "green";
+    setTimeout(function() {
+        green.style.color = "black";
+    }, 300)
+}
+function iconReset() {
+    document.getElementById("icon").style.color = "#000"
+}
+
+// function to activate modal when game is won
+function winModal() {
+    // Get the modal
+    let modal = document.getElementById("winnerModal");
+    // Get the element that closes the modal
+    let play = document.getElementsByClassName("play-button")[0];
+    modal.style.display = "block";
+    // When the user clicks on play again close the modal
+    play.onclick = function() {
+    modal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+  }
+}
+
+function quitModal() {
+    // Get the modal
+    let modal = document.getElementById("winnerModal");
+    // Get the element that closes the modal
+    let quit = document.getElementsByClassName("quit-button")[0];
+    modal.style.display = "block";
+    // When the user clicks on play again close the modal
+    quit.onclick = function() {
+    modal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+  }
+}
 
 // function to change colours in play and when game is reset or restarted
 function clearColor() {
@@ -211,14 +258,14 @@ function checkProgress() {
     if (playOrder[playOrder.length - 1] !== colorOrder[playOrder.length - 1])
         playerProgress = false;
     // if the player has scored ten points, the winGame function is called
-    if (playOrder.length == 2 && playerProgress) {
+    if (playOrder.length == 10 && playerProgress) {
         playerWin();
     }
     // if the players progress isn't good, a function is called and game counter displays text and ICON function is called
     if (playerProgress == false) {
         flashColor();
         iconBad();
-        roundCounter.innerHTML = "X"
+        roundCounter.innerHTML = "<i class='far fa-thumbs-down' aria-hidden='true'></i>"
         // after the error has happened the counter goes back to the current round and the clearColor function is called
         setTimeout(() => {
             roundCounter.innerHTML = playerTurn
@@ -236,21 +283,43 @@ function checkProgress() {
             }
         }, 800);
     }
-    // condition to call the icon function and move on to the next round and if player scored correctly - REFACTOR THIS!
-    if (playerTurn == playOrder.length && playerProgress && !gameWin) {
-        playerTurn++;
-        playOrder = [];
-        compTurn = true;
-        gameFlash = 0;
-        iconGood();
-        roundCounter.innerHTML = playerTurn;
-        intervalId = setInterval(gameTurn, 800);
+    // function to call the icon function and move on to the next round and if player scored correctly
+    nextRound();
+
+    function nextRound() {
+        if (playerTurn == playOrder.length && playerProgress && !gameWin) {
+            playerTurn++;
+            playOrder = [];
+            compTurn = true;
+            gameFlash = 0;
+            iconGood();
+            roundCounter.innerHTML = playerTurn;
+            intervalId = setInterval(gameTurn, 800);
+        }
     }
 }
 
 // function to call when all rounds have been won, calls the flashColor function when player reached ten rounds
 function playerWin() {
     flashColor();
+    winModal();
+    quitModal();
     powerToggle = false;
     gameWin = true;
+    roundCounter.innerHTML = "10/10"
+}
+
+// calls the playGame function to reset the variables when player clicks new game button
+playAgain.addEventListener('click', newGame);
+function newGame(event) {
+    playGame();
+    clearColor();
+    iconReset();
+}
+
+// clear the game when quit button is clicked
+quit.addEventListener('click', quitGame);
+function quitGame(event) {
+    clearColor();
+    roundCounter.innerHTML = "READY";
 }
