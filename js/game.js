@@ -54,12 +54,21 @@ power.addEventListener('click', (event) => {
         roundCounter.innerHTML = "READY"
     } else {
         powerToggle = false;
-        roundCounter.innerHTML = "BYE <i class='far fa-hand-paper' aria-hidden='true'></i>"
+        counterTimeout();
         clearColor();
         // stops colour buttons from flashing if power is off
         clearInterval(intervalId);
     }
 });
+
+// display counter text when power toggle is switched off
+function counterTimeout() {
+    let off = document.getElementById("counter");
+    off.innerHTML = "BYE <i class='far fa-hand-paper' aria-hidden='true'></i>"
+    setTimeout(function() {
+        off.innerHTML = "";
+    }, 1000)
+}
 
 // if start button is activated the game starts
 start.addEventListener('click', (event) => {
