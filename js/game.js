@@ -124,7 +124,7 @@ function colorFour() {
 
 // functions for font icon colour change
 function iconBad() {
-    document.getElementById("icon").style.color = "tomato"
+    document.getElementById("icon").style.color = "darkred"
 }
 function iconGood() {
     document.getElementById("icon").style.color = "green"
@@ -140,6 +140,14 @@ function clearColor() {
     blue.style.backgroundColor = "darkblue";
 }
 
+// turns all colours when game has been won and function is called
+function flashColor() {
+    green.style.backgroundColor = "lightgreen";
+    orange.style.backgroundColor = "lightgoldenrodyellow";
+    red.style.backgroundColor = "lightcoral";
+    blue.style.backgroundColor = "lightblue";
+}
+
 // functions to alow user to click the highlighted colour
 // cross reference each function with the first to avoid comment repitition
 
@@ -147,7 +155,7 @@ green.addEventListener('click', (event) => {
     // if power is 'ON' push the color in to the play order array and call the function
     if (powerToggle) {
         playOrder.push(1);
-        // checkCorrect();
+        checkProgress();
         colorOne();
         // if player hasn't won game revert colour back to default
         if(!gameWin) {
@@ -160,8 +168,8 @@ green.addEventListener('click', (event) => {
 
 orange.addEventListener('click', (event) => {
     if (powerToggle) {
-        playOrder.push(2);
-        // checkCorrect();
+        playOrder.push(3);
+        checkProgress();
         colorThree();
         if(!gameWin) {
             setTimeout(() => {
@@ -173,8 +181,8 @@ orange.addEventListener('click', (event) => {
 
 red.addEventListener('click', (event) => {
     if (powerToggle) {
-        playOrder.push(3);
-        // checkCorrect();
+        playOrder.push(2);
+        checkProgress();
         colorTwo();
         if(!gameWin) {
             setTimeout(() => {
@@ -187,7 +195,7 @@ red.addEventListener('click', (event) => {
 blue.addEventListener('click', (event) => {
     if (powerToggle) {
         playOrder.push(4);
-        // checkCorrect();
+        checkProgress();
         colorFour();
         if(!gameWin) {
             setTimeout(() => {
@@ -203,8 +211,8 @@ function checkProgress() {
     if (playOrder[playOrder.length - 1] !== colorOrder[playOrder.length - 1])
         playerProgress = false;
     // if the player has scored ten points, the winGame function is called
-    if (playOrder.length == 10 && playerProgress) {
-        gameWin();
+    if (playOrder.length == 2 && playerProgress) {
+        playerWin();
     }
     // if the players progress isn't good, a function is called and game counter displays text and ICON function is called
     if (playerProgress == false) {
@@ -238,4 +246,10 @@ function checkProgress() {
         roundCounter.innerHTML = playerTurn;
         intervalId = setInterval(gameTurn, 800);
     }
+}
+
+function playerWin() {
+    flashColor();
+    powerToggle = false;
+    gameWin = true;
 }
