@@ -14,50 +14,45 @@ let compTurn;
 let intervalId;
 // checking whether the strict toggle is switched on or off
 let strictToggle = false;
-// checking if power button is on or off 
+// checking if power button is on or off
 let powerToggle = false;
-// if playwer has won the game or not 
+// if player has won the game or not
 let gameWin;
+
+let off = document.getElementById("counter");
 
 // game counter
 const roundCounter = document.querySelector("#counter");
 
 // colour buttons
-const green = document.querySelector("#green-button")
-const orange = document.querySelector("#orange-button")
-const red = document.querySelector("#red-button")
-const blue = document.querySelector("#blue-button")
+const green = document.querySelector("#green-button");
+const orange = document.querySelector("#orange-button");
+const red = document.querySelector("#red-button");
+const blue = document.querySelector("#blue-button");
 
 // control buttons & toggles
-const power = document.querySelector("#on-button")
-const strict = document.querySelector("#strict-button")
-const start = document.querySelector("#start-button")
-const playAgain = document.querySelector("#play-again")
-const quit = document.querySelector("#quit-game")
-
-// disabled scrolling in mobile view so container stays in a fixed state
-const fixed = document.getElementById('container');
-fixed.addEventListener('touchmove', function(e) {
-    e.preventDefault();
-}, false)
+const power = document.querySelector("#on-button");
+const strict = document.querySelector("#strict-button");
+const start = document.querySelector("#start-button");
+const playAgain = document.querySelector("#play-again");
+const quit = document.querySelector("#quit-game");
 
 // check if strict mode toggle is activated
-strict.addEventListener('click', (event) => {
-    if (strict.checked == true) {
+strict.addEventListener("click", function(event) {
+    if (strict.checked === true) {
         strictToggle = true;
-        roundCounter.innerHTML = "SM"
+        roundCounter.innerHTML = "SM";
     } else {
         strictToggle = false;
-        roundCounter.innerHTML = "<strike>SM</strike>"
+        roundCounter.innerHTML = "<strike>SM</strike>";
     }
 });
 
 // check if on power toggle is activated
-power.addEventListener('click', (event) => {
-    console.log("power activated")
-    if (power.checked == true) {
+power.addEventListener("click", function(event) {
+    if (power.checked === true) {
         powerToggle = true;
-        roundCounter.innerHTML = "READY"
+        roundCounter.innerHTML = "READY";
     } else {
         powerToggle = false;
         counterTimeout();
@@ -69,15 +64,14 @@ power.addEventListener('click', (event) => {
 
 // display counter text when power toggle is switched off
 function counterTimeout() {
-    let off = document.getElementById("counter");
-    off.innerHTML = "BYE <i class='far fa-hand-paper' aria-hidden='true'></i>"
+    off.innerHTML = "BYE <i class='far fa-hand-paper' aria-hidden='true'></i>";
     setTimeout(function() {
         off.innerHTML = "";
-    }, 1000)
+    }, 1000);
 }
 
 // if start button is activated the game starts
-start.addEventListener('click', (event) => {
+start.addEventListener("click", function(event) {
     if (powerToggle || gameWin) {
         playGame();
     }
@@ -94,7 +88,7 @@ function playGame() {
     roundCounter.innerHTML = 1;
     playerProgress = true;
     // looping through the game 10 times as player has to get 10 rounds to win
-    for (var i = 0; i < 10; i++) {
+    for ( i = 0; i < 10; i++) {
         colorOrder.push(Math.floor(Math.random() * 4) + 1);
     }
     compTurn = true;
@@ -104,7 +98,7 @@ function playGame() {
 
 function gameTurn() {
     powerToggle = false;
-    if (gameFlash == playerTurn) {
+    if (gameFlash === playerTurn) {
         clearInterval(intervalId);
         compTurn = false;
         clearColor();
@@ -114,10 +108,18 @@ function gameTurn() {
     if (compTurn) {
         clearColor();
         setTimeout(() => {
-            if (colorOrder[gameFlash] == 1) colorOne();
-            if (colorOrder[gameFlash] == 2) colorTwo();
-            if (colorOrder[gameFlash] == 3) colorThree();
-            if (colorOrder[gameFlash] == 4) colorFour();
+            if (colorOrder[gameFlash] == 1) {
+                colorOne();
+            }
+            if (colorOrder[gameFlash] == 2) {
+                colorTwo();
+            }
+            if (colorOrder[gameFlash] == 3) {
+                colorThree();
+            }
+            if (colorOrder[gameFlash] == 4) {
+                colorFour();
+            }
             gameFlash++;
         }, 200);
     }
@@ -174,7 +176,7 @@ function winModal() {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-  }
+  };
 }
 
 function quitModal() {
@@ -229,7 +231,7 @@ green.addEventListener('click', (event) => {
     }
 })
 
-orange.addEventListener('click', (event) => {
+orange.addEventListener("click", (event) => {
     if (powerToggle) {
         playOrder.push(3);
         checkProgress();
@@ -242,7 +244,7 @@ orange.addEventListener('click', (event) => {
     }
 })
 
-red.addEventListener('click', (event) => {
+red.addEventListener("click", (event) => {
     if (powerToggle) {
         playOrder.push(2);
         checkProgress();
@@ -255,7 +257,7 @@ red.addEventListener('click', (event) => {
     }
 })
 
-blue.addEventListener('click', (event) => {
+blue.addEventListener("click", (event) => {
     if (powerToggle) {
         playOrder.push(4);
         checkProgress();
@@ -271,8 +273,9 @@ blue.addEventListener('click', (event) => {
 // checking progress of current game
 function checkProgress() {
     // checking to see if the player and game are at an equal level
-    if (playOrder[playOrder.length - 1] !== colorOrder[playOrder.length - 1])
+    if (playOrder[playOrder.length - 1] !== colorOrder[playOrder.length - 1]) {
         playerProgress = false;
+    }
     // if the player has scored ten points, the winGame function is called
     if (playOrder.length == 10 && playerProgress) {
         playerWin();
@@ -281,7 +284,7 @@ function checkProgress() {
     if (playerProgress == false) {
         flashColor();
         iconBad();
-        roundCounter.innerHTML = "<i class='far fa-thumbs-down' aria-hidden='true'></i>"
+        roundCounter.innerHTML = "<i class='far fa-thumbs-down' aria-hidden='true'></i>";
         // after the error has happened the counter goes back to the current round and the clearColor function is called
         setTimeout(() => {
             roundCounter.innerHTML = playerTurn
@@ -299,8 +302,7 @@ function checkProgress() {
             }
         }, 800);
     }
-
-    // function to call the icon function reset colours and move on to the next round and if player scored correctly
+    // function to call the icon function and move on to the next round and if player scored correctly
     nextRound();
 
     function nextRound() {
@@ -323,7 +325,7 @@ function playerWin() {
     quitModal();
     powerToggle = false;
     gameWin = true;
-    roundCounter.innerHTML = "10/10"
+    roundCounter.innerHTML = "10/10";
 }
 
 // calls the playGame function to reset the variables when player clicks new game button

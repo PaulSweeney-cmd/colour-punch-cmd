@@ -42,7 +42,7 @@ hr {
 /* game buttons and styling */
 
 #outer-circle {
-    background: black;
+    background: #000000;
     border-radius: 50%;
     height: 500px;
     width: 500px;
@@ -342,8 +342,8 @@ button#quit-game {
     }
 }
 @media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
+  and (min-width: 1200px) 
+  and (max-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) {
     #container {
         transform: scale(1.0);
