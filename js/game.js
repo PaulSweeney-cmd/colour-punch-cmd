@@ -88,7 +88,7 @@ function playGame() {
     roundCounter.innerHTML = 1;
     playerProgress = true;
     // looping through the game 10 times as player has to get 10 rounds to win
-    for ( i = 0; i < 10; i++) {
+    for ( let i = 0; i < 10; i++ ) {
         colorOrder.push(Math.floor(Math.random() * 4) + 1);
     }
     compTurn = true;
@@ -145,7 +145,7 @@ function iconBad() {
     red.style.color = "red";
     setTimeout(function() {
         red.style.color = "black";
-    }, 300)
+    }, 300);
 }
 
 function iconGood() {
@@ -153,11 +153,11 @@ function iconGood() {
     green.style.color = "green";
     setTimeout(function() {
         green.style.color = "black";
-    }, 300)
+    }, 300);
 }
 
 function iconReset() {
-    document.getElementById("icon").style.color = "#000"
+    document.getElementById("icon").style.color = "#000";
 }
 
 // function to activate modal when game is won
@@ -170,7 +170,7 @@ function winModal() {
     // When the user clicks on play again close the modal
     play.onclick = function() {
     modal.style.display = "none";
-    }
+    };
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
     if (event.target == modal) {
@@ -188,13 +188,13 @@ function quitModal() {
     // When the user clicks on play again close the modal
     quit.onclick = function() {
     modal.style.display = "none";
-    }
+    };
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-  }
+  };
 }
 
 // function to change colours in play and when game is reset or restarted
@@ -229,7 +229,7 @@ green.addEventListener('click', (event) => {
             }, 300);
         }   
     }
-})
+});
 
 orange.addEventListener("click", (event) => {
     if (powerToggle) {
@@ -242,7 +242,7 @@ orange.addEventListener("click", (event) => {
             }, 300);
         }   
     }
-})
+});
 
 red.addEventListener("click", (event) => {
     if (powerToggle) {
@@ -255,7 +255,7 @@ red.addEventListener("click", (event) => {
             }, 300);
         }   
     }
-})
+});
 
 blue.addEventListener("click", (event) => {
     if (powerToggle) {
@@ -268,7 +268,7 @@ blue.addEventListener("click", (event) => {
             }, 300);
         }   
     }
-})
+});
 
 // checking progress of current game
 function checkProgress() {
@@ -287,7 +287,7 @@ function checkProgress() {
         roundCounter.innerHTML = "<i class='far fa-thumbs-down' aria-hidden='true'></i>";
         // after the error has happened the counter goes back to the current round and the clearColor function is called
         setTimeout(() => {
-            roundCounter.innerHTML = playerTurn
+            roundCounter.innerHTML = playerTurn;
             clearColor();
             // if STRICT MODE is switched on the game automatically resets back to the beginning
             if (strictToggle) {
