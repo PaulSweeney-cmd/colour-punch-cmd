@@ -11,13 +11,20 @@
 * If the strict button is switched off then the player simply starts where they left off.
 #
 
-## Design
+## UX - Design
+#
 ![Am I Responsive?](images/colour-punch-wireframe.png)
 #
 ## Typography & Colour Scheme
-### 1. Layout colours:
+## 1. Layout colours
 * I kept this nice and simple as there is only one page to the project the colour scheme is pretty straight forward. I decided to break up the page by adding two colours for the page layout:
-* Goldenrod - this was used for the STRICT MODE instructions and one of the game button.
-* HEX Code: #17a2b8 - For instructions in the drop down, both colours seem to compliment eachother quite nicely and go really well with the font design.
-### 2. Game buttons:
-* The decision on colour choice was pretty simple for the buttons, I had to make sure they were the right shades as the lighter shades of each have to be distinctive enough to notice the change when playing the game.
+* Goldenrod - this was used for the STRICT MODE instructions, modal font icons and one of the game buttons.
+* HEX Code: #17a2b8 - For the page title, instructions in the drop down & toggle switches ( when activated ), both colours seem to compliment eachother quite nicely and go really well with the font design.
+## 2. Game buttons
+* The decision on colour choice was pretty simple for the buttons, I had to make sure they were the right shades as the lighter shades of each have to be distinctive enough for the player to notice the change when playing the game.
+## 3. Typography - Font
+* The theme of the project is a game so I wanted to find a design that would compliment this, the font chosen is 'Orbitron' with a default backup of sans-serif. This font goes really well with the colour scheme and gives it a futuristic effect. This font was also used for the round counter to give the text (when displayed) a bit more volume to fill out the space when activated. 
+## 4. Font Icons
+* I added two trophy icons to the modal, this was a great decision as it adds more animation to the feature.
+* I decided to add an additonal font icon to display with text in the round counter box when a player makes a mistake with the colour sequence. I think this finished off that feature quite nicely as it makes the game seem more genuine when you play it instead of text on its own.
+#
