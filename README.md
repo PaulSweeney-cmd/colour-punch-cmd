@@ -11,4 +11,6 @@
 * If the strict button is switched off then the player simply starts where they left off.
 #
 
-## Wireframes
+## Design
+![Am I Responsive?](images/colour-punch-wireframe.png)
+#
