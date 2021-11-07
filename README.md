@@ -30,7 +30,7 @@
 #
 ## Functionality
 ## 1. Source code
-* The base code was implemented by following a [freeCodeCamp.org - Simon Game](https://www.youtube.com/watch?v=n_ec3eowFLQ) tutorial. This project is for educational purposes so I wanted to get a better grip on improving my javascript skills, I found the tutorial to be very useful when it came to getting a different take on how to structure Javascript.
+* The base code was implemented by following a [Simon Game by Beau Carnes - freeCodeCamp.org](https://www.youtube.com/watch?v=n_ec3eowFLQ) tutorial. This project is for educational purposes so I wanted to get a better grip on improving my javascript skills, I found the tutorial to be very useful when it came to getting a different take on how to structure Javascript.
 ## 2. Additional functionality
 I wanted to make this game my own so after following this tutorial and getting a better understanding I found myself improving the game buy adding my own functionality:
 1.  A static font icon that lights up in the middle of the board when a player gets a sequence right or wrong (Green for right and Red for wrong), an additional thumbs down icon was added to the counter box when player scored incorrectly.
