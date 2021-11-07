@@ -2,11 +2,12 @@
 
 body {
     background-color: black;
+    overflow: scroll;
 }
-.container {
+#container {
     margin-top: 50px;
     padding-bottom: 60px;
-    width: fit-content;
+    width: 100%;
 }
 
 h2.page-title {
@@ -26,7 +27,7 @@ button#dropdownMenu2 {
 }
 .dropdown-menu.p-4.text-muted.show {
     background-color: #000 !important;
-    max-width: 295px !important;
+    max-width: 343px !important;
 }
 p {
     color: #17a2b8;
@@ -316,12 +317,13 @@ button#quit-game {
 }
 
 @media only screen and (min-width: 380px) and (max-width: 600px) {
-    .container {
+    #container {
         transform: scale(0.7);
-        overflow-x:hidden;
-        overflow-y:hidden;
-        overflow:hidden;
-        margin-top: 76px;
+        height: fit-content;
+    }
+    .dropdown-menu.p-4.text-muted.show {
+        margin-top: 21rem;
+
     }
     body {
         width: fit-content;
@@ -333,7 +335,7 @@ button#quit-game {
         font-size: 21px;
     }
     .dropdown-menu.p-4.text-muted.show {
-        max-width: 295px !important;
+        max-width: 340px !important;
     }
     p {
         font-size: 20px;
@@ -343,8 +345,9 @@ button#quit-game {
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) {
-    .container {
-        transform: scale(1.0); 
+    #container {
+        transform: scale(1.0);
+        height: 50%;
     }
 }
 

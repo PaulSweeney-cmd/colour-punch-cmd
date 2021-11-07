@@ -35,6 +35,11 @@ const start = document.querySelector("#start-button")
 const playAgain = document.querySelector("#play-again")
 const quit = document.querySelector("#quit-game")
 
+const fixed = document.getElementById('container');
+fixed.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+}, false)
+
 // check if strict mode toggle is activated
 strict.addEventListener('click', (event) => {
     if (strict.checked == true) {
