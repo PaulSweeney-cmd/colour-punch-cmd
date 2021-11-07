@@ -318,8 +318,8 @@ button#quit-game {
 
 @media only screen and (min-width: 380px) and (max-width: 600px) {
     #container {
-        transform: scale(1.0);
-        height: fit-content;
+        transform: scale(0.8);
+        height: 100vh;
     }
     .dropdown-menu.p-4.text-muted.show {
         margin-top: 21rem;
@@ -347,7 +347,7 @@ button#quit-game {
   and (-webkit-min-device-pixel-ratio: 1) {
     #container {
         transform: scale(1.0);
-        height: 50%;
+        height: 100vh;
     }
 }
 
