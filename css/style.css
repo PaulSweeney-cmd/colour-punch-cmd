@@ -317,12 +317,12 @@ button#quit-game {
 
 @media only screen and (min-width: 380px) and (max-width: 600px) {
     #container {
-        transform: scale(0.7);
+        transform: scale(0.9);
         height: 50px;
         width: 100%;
     }
     .dropdown-menu.p-4.text-muted.show {
-        margin-top: 21rem;
+        margin-top: 14rem;
 
     }
     body {
