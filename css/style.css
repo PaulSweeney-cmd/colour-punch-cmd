@@ -6,7 +6,7 @@ body {
 #container {
     margin-top: 50px;
     padding-bottom: 60px;
-    width: 100%;
+    height: 100vh;
 }
 
 h2.page-title {
@@ -318,7 +318,8 @@ button#quit-game {
 @media only screen and (min-width: 380px) and (max-width: 600px) {
     #container {
         transform: scale(0.7);
-        height: fit-content;
+        height: 50px;
+        width: 100%;
     }
     .dropdown-menu.p-4.text-muted.show {
         margin-top: 21rem;
@@ -346,7 +347,8 @@ button#quit-game {
   and (-webkit-min-device-pixel-ratio: 1) {
     #container {
         transform: scale(1.0);
-        height: 100vh;
+        height: 50px;
+        width: fit-content;
     }
 }
 
