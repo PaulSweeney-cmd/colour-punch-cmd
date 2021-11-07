@@ -28,3 +28,13 @@
 * I added two trophy icons to the modal, this was a great decision as it adds more animation to the feature.
 * I decided to add an additonal font icon to display with text in the round counter box when a player makes a mistake with the colour sequence. I think this finished off that feature quite nicely as it makes the game seem more genuine when you play it instead of text on its own.
 #
+## Functionality
+## 1. Source code
+* The base code was implemented by following a [freeCodeCamp.org - Simon Game](https://www.youtube.com/watch?v=n_ec3eowFLQ) tutorial. This project is for educational purposes so I wanted to get a better grip on improving my javascript skills, I found the tutorial to be very useful when it came to getting a different take on how to structure Javascript.
+## 2. Additional functionality
+I wanted to make this game my own so after following this tutorial and getting a better understanding I found myself improving the game buy adding my own functionality:
+1.  A static font icon that lights up in the middle of the board when a player gets a sequence right or wrong (Green for right and Red for wrong), an additional thumbs down icon was added to the counter box when player scored incorrectly.
+2.  A modal displays when the player has reached ten points, this also includes individual functionality attached to a quit button and a play again button:
+ - The quit button reset the colours and displays "READY" on to the counter
+ - The play again button simply resets the game and starts the sequance again from round one
+- Both buttons also have additional functionality that resets the inner-board icon back to it's default colour of 'Black' when the player clicks either buton.
