@@ -87,7 +87,7 @@ function playGame() {
     playerTurn = 1;
     roundCounter.innerHTML = 1;
     playerProgress = true;
-    // looping through the game 10 times as player has to get 10 rounds to win
+    // looping through the game as player has to get 10 rounds to win
     for ( let i = 0; i < 10; i++ ) {
         colorOrder.push(Math.floor(Math.random() * 4) + 1);
     }
@@ -125,7 +125,8 @@ function gameTurn() {
     }
 }
 
-// functions from gameTurn are called and colours change in respoinse to the sequence
+/* functions from gameTurn are called 
+and colours change in respoinse to the sequence */
 function colorOne() {
     green.style.backgroundColor = "lightgreen";
 }
@@ -213,11 +214,12 @@ function flashColor() {
     blue.style.backgroundColor = "lightblue";
 }
 
-// functions to alow user to click the highlighted colour
-// cross reference each function with the first to avoid comment repitition
+/* functions to alow user to click the highlighted colour
+cross reference each function with the first to avoid comment repitition */
 
 green.addEventListener('click', (event) => {
-    // if power is 'ON' push the color in to the play order array and call the function
+    /* if power is 'ON' push the color in to 
+    the play order array and call the function */
     if (powerToggle) {
         playOrder.push(1);
         checkProgress();
@@ -280,16 +282,19 @@ function checkProgress() {
     if (playOrder.length == 10 && playerProgress) {
         playerWin();
     }
-    // if the players progress isn't good, a function is called and game counter displays text and ICON function is called
+    /* if the players progress isn't good, a function is called and game 
+       counter displays text and ICON function is called */
     if (playerProgress == false) {
         flashColor();
         iconBad();
         roundCounter.innerHTML = "<i class='far fa-thumbs-down' aria-hidden='true'></i>";
-        // after the error has happened the counter goes back to the current round and the clearColor function is called
+        /* after the error has happened the counter goes back 
+        to the current round and the clearColor function is called */
         setTimeout(() => {
             roundCounter.innerHTML = playerTurn;
             clearColor();
-            // if STRICT MODE is switched on the game automatically resets back to the beginning
+            /* if STRICT MODE is switched on the game 
+            automatically resets back to the beginning */
             if (strictToggle) {
                 playGame();
             // if STRICT MODE is switched off the game resumes
@@ -302,7 +307,8 @@ function checkProgress() {
             }
         }, 800);
     }
-    // function to call the icon function and move on to the next round and if player scored correctly
+    /* function to call the icon function and move 
+    on to the next round and if player scored correctly */
     nextRound();
 
     function nextRound() {
@@ -318,7 +324,8 @@ function checkProgress() {
     }
 }
 
-// function to call when all rounds have been won, calls the flashColor function when player reached ten rounds
+/* function to call when all rounds have been won, 
+calls the flashColor function when player reached ten rounds */
 function playerWin() {
     flashColor();
     winModal();
@@ -328,7 +335,8 @@ function playerWin() {
     roundCounter.innerHTML = "10/10";
 }
 
-// calls the playGame function to reset the variables when player clicks new game button
+/* calls the playGame function to reset the variables 
+when player clicks new game button */
 playAgain.addEventListener('click', newGame);
 function newGame(event) {
     playGame();
