@@ -35,6 +35,7 @@ const start = document.querySelector("#start-button")
 const playAgain = document.querySelector("#play-again")
 const quit = document.querySelector("#quit-game")
 
+// disabled scrolling in mobile view so container stays in a fixed state
 const fixed = document.getElementById('container');
 fixed.addEventListener('touchmove', function(e) {
     e.preventDefault();
@@ -298,7 +299,8 @@ function checkProgress() {
             }
         }, 800);
     }
-    // function to call the icon function and move on to the next round and if player scored correctly
+
+    // function to call the icon function reset colours and move on to the next round and if player scored correctly
     nextRound();
 
     function nextRound() {
