@@ -217,7 +217,7 @@ function flashColor() {
 /* functions to alow user to click the highlighted colour
 cross reference each function with the first to avoid comment repitition */
 
-green.addEventListener('click', (event) => {
+green.addEventListener("click", (event) => {
     /* if power is 'ON' push the color in to 
     the play order array and call the function */
     if (powerToggle) {
