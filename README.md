@@ -109,5 +109,5 @@ DOUBLE TAP > >
 3. Navigate to the "Settings" tab and select.
 4. Scroll down to the GitHub Pages section and click the link.
 5. Under "source" section change the branch name from 'None' and choose 'Main', making sure the folder  is set to 'root'.
-6. Select 'Save'. The page should now produce a URL for yur published site.
+6. Select 'Save'. The page should now produce a URL for your published site.
 #
