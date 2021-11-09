@@ -74,9 +74,10 @@
 - ### Scalability implemented for ganme to adjust to device screens but issue still occurs until you double tap your screen.
 - ### Screenshots for only one device included as this is the same outcome so seems pointless to include everything to prevent repetitiveness.
 #
-![Am I Responsive?](images/iPhone-before.png)
-DOUBLE TAP > >
-![Am I Responsive?](images/iPhone-after.png)
+
+| Before Tap  | After Tap| 
+| ------------- | ------------- |
+| ![](images/iPhone-before.png) | ![](images/iPhone-after.png)  |
 #
 
 ##  User Testing
@@ -87,6 +88,15 @@ DOUBLE TAP > >
 ### Additional Features
 - ### The fact that the developer has included both a screen to display the level I'm on and a digital icon that changes colour to respond to the game play, I found that this really improves my experience and it's really addictive and frustrating in a good way!
 - ### The game also has instructions on how to play which is really good becuase it explains how many levels there are to win and an explanation on the strict mode button
+#
+
+| Power On  | Power Off | Strict Mode On  | Strict Mode Off |
+| :---: | :---: | :---: | :---: |
+| ![](images/power-on.png)  | ![](images/power-off.png) | ![](images/strict-on.png) | ![](images/strict-off.png)  |
+
+| Good Move  | Bad Move | Game Instructions  | Player Wins |
+| :---: | :---: | :---: | :---: |
+| ![](images/good-move.png)  | ![](images/bad-move.png) | ![](images/instructions.png) | ![](images/win-game.png)  |
 #
 ## Devices & Browsers
 ### Browsers
