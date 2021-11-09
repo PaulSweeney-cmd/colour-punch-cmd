@@ -318,7 +318,10 @@ function checkProgress() {
             compTurn = true;
             gameFlash = 0;
             iconGood();
-            roundCounter.innerHTML = playerTurn;
+            roundCounter.innerHTML = "<i class='far fa-thumbs-up' aria-hidden='true'></i>";
+            setTimeout(() => {
+                roundCounter.innerHTML = playerTurn;
+            }, 800)
             intervalId = setInterval(gameTurn, 800);
         }
     }
