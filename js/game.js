@@ -305,7 +305,7 @@ function checkProgress() {
                 playerProgress = true;
                 intervalId = setInterval(gameTurn, 800);
             }
-        }, 800);
+        }, 300);
     }
     /* function to call the icon function and move 
     on to the next round and if player scored correctly */
@@ -321,7 +321,7 @@ function checkProgress() {
             roundCounter.innerHTML = "<i class='far fa-thumbs-up' aria-hidden='true'></i>";
             setTimeout(() => {
                 roundCounter.innerHTML = playerTurn;
-            }, 800)
+            }, 300)
             intervalId = setInterval(gameTurn, 800);
         }
     }
