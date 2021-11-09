@@ -55,7 +55,7 @@
 - ### The base code was implemented by following a [Simon Game by Beau Carnes - freeCodeCamp.org](https://www.youtube.com/watch?v=n_ec3eowFLQ) tutorial. This project is for educational purposes so I wanted to get a better grip on improving my javascript skills, I found the tutorial to be very useful when it came to getting a different take on how to structure Javascript.
 ## 2. Additional functionality
 ### I wanted to make this game my own so after following this tutorial and getting a better understanding I found myself improving the game buy adding my own functionality:
-- ### A static font icon that lights up in the middle of the board when a player gets a sequence right or wrong (Green for right and Red for wrong), an additional thumbs down icon was added to the counter box when player scored incorrectly.
+- ### A static font icon that lights up in the middle of the board when a player gets a sequence right or wrong (Green for right and Red for wrong), an additional thumbs down and thumbs up icon was added to the counter box when player scores correctly and  incorrectly.
 - ### A modal displays when the player has reached ten points, this also includes individual functionality attached to a quit button and a play again button:
 - ### The quit button reset the colours and displays "READY" on to the counter
 - ### The play again button simply resets the game and starts the sequance again from round one
@@ -86,8 +86,8 @@
 ### Game Play
 - ### I found the game to increase in difficulty as it went on. This challenged me which is exactly what I specified in my requests. 
 ### Additional Features
-- ### The fact that the developer has included both a screen to display the level I'm on and a digital icon that changes colour to respond to the game play, I found that this really improves my experience and it's really addictive and frustrating in a good way!
-- ### The game also has instructions on how to play which is really good becuase it explains how many levels there are to win and an explanation on the strict mode button
+- ### The fact that the developer has included both a screen to display the level I'm on and a digital icon that changes colour to respond to the game play with an additonal thumb icon to determine a good play or bad play is great, it shows a lot of effort and attention to detail went in to making this. I found that this really improves my experience. Plus, it's really addictive and frustrating in a good way!
+- ### The game also has instructions on how to play which is really good becuase it explains how many levels there are to win and an explanation on the strict mode button.
 #
 
 | Power On  | Power Off | Strict Mode On  | Strict Mode Off |
