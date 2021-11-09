@@ -109,6 +109,12 @@ I wanted to make this game my own so after following this tutorial and getting a
 ### Devices
 - Samsung Galaxy A21S & iPhone 6 - colleagues handset. Responsivness issue highlighted in the Unresponsive adjustment - device screens section still showing.
 #
+## Credits & Acknowledgements
+ - Beau Carnes @ FreeCodeCamp - Layout & structure CSS & Base code for the game minus my additonal functionality stated in a previous section of this file.
+ - GeeksForGeeks - Research on nested functions.
+ - Igor @ Code Institute Tutor Support - Tips on scalability for responsivness.
+ - Stack Overflow - Media Queries & Set Timeout Functions.
+ #
 ## Cloning & Deployment
 ### To clone this repository do the following:
 1. Navigate to the main page of the repository.
