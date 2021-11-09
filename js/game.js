@@ -42,9 +42,15 @@ strict.addEventListener("click", function(event) {
     if (strict.checked === true) {
         strictToggle = true;
         roundCounter.innerHTML = "SM";
+        setTimeout(function() {
+            off.innerHTML = "";
+        }, 1000);
     } else {
         strictToggle = false;
         roundCounter.innerHTML = "<strike>SM</strike>";
+        setTimeout(function() {
+            off.innerHTML = "";
+        }, 1000);
     }
 });
 
@@ -107,7 +113,7 @@ function gameTurn() {
     // computer resets colours and generates a random color lasting 2 seconds
     if (compTurn) {
         clearColor();
-        setTimeout(() => {
+        setTimeout( function() {
             if (colorOrder[gameFlash] == 1) {
                 colorOne();
             }
@@ -217,7 +223,7 @@ function flashColor() {
 /* functions to alow user to click the highlighted colour
 cross reference each function with the first to avoid comment repitition */
 
-green.addEventListener("click", (event) => {
+green.addEventListener("click", function(event) {
     /* if power is 'ON' push the color in to 
     the play order array and call the function */
     if (powerToggle) {
@@ -226,46 +232,46 @@ green.addEventListener("click", (event) => {
         colorOne();
         // if player hasn't won game revert colour back to default
         if(!gameWin) {
-            setTimeout(() => {
+            setTimeout( function() {
                 clearColor();
             }, 300);
         }   
     }
 });
 
-orange.addEventListener("click", (event) => {
+orange.addEventListener("click", function(event) {
     if (powerToggle) {
         playOrder.push(3);
         checkProgress();
         colorThree();
         if(!gameWin) {
-            setTimeout(() => {
+            setTimeout( function() {
                 clearColor();
             }, 300);
         }   
     }
 });
 
-red.addEventListener("click", (event) => {
+red.addEventListener("click", function(event) {
     if (powerToggle) {
         playOrder.push(2);
         checkProgress();
         colorTwo();
         if(!gameWin) {
-            setTimeout(() => {
+            setTimeout( function() {
                 clearColor();
             }, 300);
         }   
     }
 });
 
-blue.addEventListener("click", (event) => {
+blue.addEventListener("click", function(event) {
     if (powerToggle) {
         playOrder.push(4);
         checkProgress();
         colorFour();
         if(!gameWin) {
-            setTimeout(() => {
+            setTimeout( function() {
                 clearColor();
             }, 300);
         }   
@@ -290,7 +296,7 @@ function checkProgress() {
         roundCounter.innerHTML = "<i class='far fa-thumbs-down' aria-hidden='true'></i>";
         /* after the error has happened the counter goes back 
         to the current round and the clearColor function is called */
-        setTimeout(() => {
+        setTimeout( function() {
             roundCounter.innerHTML = playerTurn;
             clearColor();
             /* if STRICT MODE is switched on the game 
@@ -319,9 +325,9 @@ function checkProgress() {
             gameFlash = 0;
             iconGood();
             roundCounter.innerHTML = "<i class='far fa-thumbs-up' aria-hidden='true'></i>";
-            setTimeout(() => {
+            setTimeout( function() {
                 roundCounter.innerHTML = playerTurn;
-            }, 300)
+            }, 300);
             intervalId = setInterval(gameTurn, 800);
         }
     }

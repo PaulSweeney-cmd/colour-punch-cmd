@@ -80,6 +80,11 @@
 | ![](images/iPhone-before.png) | ![](images/iPhone-after.png)  |
 #
 
+## Code Validator Files
+- #### [HTML](images/HTML-Validator.png)
+- #### [CSS](images/CSS-Validator.png)
+- #### [Javascript](images/Javascript-Validator.png)
+#
 ##  User Testing
 ### Layout
 - ### I like that the creator has based the design on the "Simon" game. The layout is identical to the physical version, only the colours are more vivid and the game acts the same way which is great.
