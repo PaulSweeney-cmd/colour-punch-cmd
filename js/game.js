@@ -19,9 +19,9 @@ let powerToggle = false;
 // if player has won the game or not
 let gameWin;
 
-let off = document.getElementById("counter");
-
 // game counter
+// document.getElementById & document.querySelector can used if you require different functionalities for the same element
+let off = document.getElementById("counter");
 const roundCounter = document.querySelector("#counter");
 
 // colour buttons
@@ -39,18 +39,18 @@ const quit = document.querySelector("#quit-game");
 
 // check if strict mode toggle is activated
 strict.addEventListener("click", function(event) {
-    if (strict.checked === true) {
+    if (strict.checked === true) {  // if the strict toggle is turned on the counter screen turns on with 'SM' text showing
         strictToggle = true;
         roundCounter.innerHTML = "SM";
         setTimeout(function() {
             off.innerHTML = "";
-        }, 1000);
+        }, 1000); // timeout function is set to 1 second for 'SM' text to dissapear
     } else {
         strictToggle = false;
-        roundCounter.innerHTML = "<strike>SM</strike>";
+        roundCounter.innerHTML = "<strike>SM</strike>"; // 'SM' text shows line going through it if strict mode is turned off
         setTimeout(function() {
             off.innerHTML = "";
-        }, 1000);
+        }, 1000); // timeout function is set to 1 second for 'SM' text to dissapear
     }
 });
 
