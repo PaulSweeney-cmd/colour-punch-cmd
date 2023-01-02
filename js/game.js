@@ -39,9 +39,11 @@ const quit = document.querySelector("#quit-game");
 
 // check if strict mode toggle is activated
 strict.addEventListener("click", function(event) {
-    if (strict.checked === true) {  // if the strict toggle is turned on the counter screen turns on with 'SM' text showing
+    if (strict.checked === true) {
         strictToggle = true;
-        roundCounter.innerHTML = "SM";
+        roundCounter.innerHTML = "SM"; // if the strict toggle is turned on the counter screen turns on with 'SM' text showing
+
+
         setTimeout(function() {
             off.innerHTML = "";
         }, 1000); // timeout function is set to 1 second for 'SM' text to dissapear
@@ -131,21 +133,6 @@ function gameTurn() {
     }
 }
 
-/* functions from gameTurn are called 
-and colours change in respoinse to the sequence */
-function colorOne() {
-    green.style.backgroundColor = "lightgreen";
-}
-function colorTwo() {
-    red.style.backgroundColor = "lightcoral";
-}
-function colorThree() {
-    orange.style.backgroundColor = "lightgoldenrodyellow";
-}
-function colorFour() {
-    blue.style.backgroundColor = "lightblue";
-}
-
 // functions for font icon colour change
 function iconBad() {
     let red = document.getElementById("icon");
@@ -204,6 +191,23 @@ function quitModal() {
   };
 }
 
+/* 
+  functions from gameTurn are called 
+  and colours change in respoinse to the sequence 
+*/
+function colorOne() {
+  green.style.backgroundColor = "lightgreen";
+}
+function colorTwo() {
+  red.style.backgroundColor = "lightcoral";
+}
+function colorThree() {
+  orange.style.backgroundColor = "lightgoldenrodyellow";
+}
+function colorFour() {
+  blue.style.backgroundColor = "lightblue";
+}
+
 // function to change colours in play and when game is reset or restarted
 function clearColor() {
     green.style.backgroundColor = "darkgreen";
@@ -220,12 +224,16 @@ function flashColor() {
     blue.style.backgroundColor = "lightblue";
 }
 
-/* functions to alow user to click the highlighted colour
-cross reference each function with the first to avoid comment repitition */
+/* 
+  functions to alow user to click the highlighted colour
+  cross reference each function with the first to avoid comment repitition 
+*/
 
 green.addEventListener("click", function(event) {
-    /* if power is 'ON' push the color in to 
-    the play order array and call the function */
+    /* 
+      if power is 'ON' push the color in to 
+      the play order array and call the function 
+    */
     if (powerToggle) {
         playOrder.push(1);
         checkProgress();
@@ -288,19 +296,25 @@ function checkProgress() {
     if (playOrder.length == 10 && playerProgress) {
         playerWin();
     }
-    /* if the players progress isn't good, a function is called and game 
-       counter displays text and ICON function is called */
+    /* 
+      if the players progress isn't good, a function is called and game 
+      counter displays text and ICON function is called 
+    */
     if (playerProgress == false) {
         flashColor();
         iconBad();
         roundCounter.innerHTML = "<i class='far fa-thumbs-down' aria-hidden='true'></i>";
-        /* after the error has happened the counter goes back 
-        to the current round and the clearColor function is called */
+        /* 
+          after the error has happened the counter goes back 
+          to the current round and the clearColor function is called 
+        */
         setTimeout( function() {
             roundCounter.innerHTML = playerTurn;
             clearColor();
-            /* if STRICT MODE is switched on the game 
-            automatically resets back to the beginning */
+            /* 
+              if STRICT MODE is switched on the game 
+              automatically resets back to the beginning 
+            */
             if (strictToggle) {
                 playGame();
             // if STRICT MODE is switched off the game resumes
@@ -313,8 +327,10 @@ function checkProgress() {
             }
         }, 300);
     }
-    /* function to call the icon function and move 
-    on to the next round and if player scored correctly */
+    /* 
+      function to call the icon function and move 
+      on to the next round and if player scored correctly 
+    */
     nextRound();
 
     function nextRound() {
@@ -333,8 +349,10 @@ function checkProgress() {
     }
 }
 
-/* function to call when all rounds have been won, 
-calls the flashColor function when player reached ten rounds */
+/* 
+  function to call when all rounds have been won, 
+  calls the flashColor function when player reached ten rounds 
+*/
 function playerWin() {
     flashColor();
     winModal();
@@ -344,8 +362,10 @@ function playerWin() {
     roundCounter.innerHTML = "10/10";
 }
 
-/* calls the playGame function to reset the variables 
-when player clicks new game button */
+/* 
+  calls the playGame function to reset the variables 
+  when player clicks new game button 
+*/
 playAgain.addEventListener('click', newGame);
 function newGame(event) {
     playGame();
