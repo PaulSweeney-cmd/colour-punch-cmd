@@ -96,7 +96,7 @@ function playGame() {
     roundCounter.innerHTML = 1;
     playerProgress = true;
     // looping through the game as player has to get 10 rounds to win
-    for ( let i = 0; i < 10; i++ ) {
+    for (let i = 0; i < 10; i++) {
         colorOrder.push(Math.floor(Math.random() * 4) + 1);
     }
     compTurn = true;
